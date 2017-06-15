@@ -1,0 +1,25 @@
+// author: mjaglan
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = "edu.indiana.soic.cs.BasicStatisticsMCR"
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    // Use 'jcenter' for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    // The production code uses the SLF4J logging API at compile time
+    compile 'org.slf4j:slf4j-api:1.7.21'
+	
+	// https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-core
+	compile group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-core', version: '2.6.4'
+
+	// https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common
+	compile group: 'org.apache.hadoop', name: 'hadoop-common', version: '2.6.4'
+}
